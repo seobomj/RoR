@@ -1,6 +1,6 @@
 puts "Высота треугольника"
-h = gets.chomp
+hight = gets.to_i
 puts "Основание треугольника"
-a = gets.chomp
-result = h.to_i * a.to_i / 2
-puts "Площадь треугольника #{result}"
+base = gets.to_i
+area = hight.to_i * base.to_i / 2
+puts "Площадь треугольника #{area}"

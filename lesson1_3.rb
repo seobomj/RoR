@@ -1,21 +1,23 @@
 puts "Катет1 треугольника"
-a = gets.chomp.to_i
+side_a = gets.to_i
 puts "Катет2 треугольника"
-b = gets.chomp.to_i
+side_b = gets.to_i
 puts "Гипотенуза треугольника"
-c = gets.chomp.to_i
+side_c = gets.to_i
 
 
 
 
-a, b, c = [a, b, c].sort!
+side_a, side_b, side_c = [side_a, side_b, side_c].sort!
 
-	if (a == b) && (a == c)
-		puts "равносторонний"
-	elsif (a == b) || (a == c) || (b == c)
-		puts "Треугольник равнобедренный и равносторонний, но не прямоугольный"
-	elsif a**2 + b**2 == c**2 
-		puts "Треугольник прямоугольный"
-	else
-		puts "Другой тип треугольника"
-	end
+  if (side_a == side_c)
+    puts "равносторонний"
+  elsif (side_a == side_b) || (side_a == side_c) || (side_b == side_c)
+    puts "Треугольник равносторонний, но не прямоугольный"
+  elsif side_a**2 + side_b**2 == side_c**2 
+    puts "Треугольник прямоугольный"
+  elsif (side_a**2 + side_b**2 == side_c**2) && (side_a == side_b)
+    puts "Треугольник равнобедренный и равносторонний, но не прямоугольный"
+  else
+    puts "Другой тип треугольника"
+  end
