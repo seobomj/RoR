@@ -6,18 +6,16 @@ puts "Гипотенуза треугольника"
 side_c = gets.to_i
 
 
-
+right_triangle = side_a**2 + side_b**2 == side_c**2
 
 side_a, side_b, side_c = [side_a, side_b, side_c].sort!
 
-  if (side_a == side_c)
-    puts "равносторонний"
-  elsif (side_a == side_b) || (side_a == side_c) || (side_b == side_c)
-    puts "Треугольник равносторонний, но не прямоугольный"
-  elsif side_a**2 + side_b**2 == side_c**2 
-    puts "Треугольник прямоугольный"
-  elsif (side_a**2 + side_b**2 == side_c**2) && (side_a == side_b)
-    puts "Треугольник равнобедренный и равносторонний, но не прямоугольный"
-  else
-    puts "Другой тип треугольника"
-  end
+ if side_a == side_c
+   puts "равносторонний"
+ elsif right_triangle && (side_a == side_b)
+   puts "Треугольник равнобедренный и равносторонний, но не прямоугольный"
+ elsif right_triangle
+   puts "Треугольник прямоугольный"
+ else
+   puts "Другой тип треугольника"
+ end
